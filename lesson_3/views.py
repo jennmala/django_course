@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.templatetags.static import static
 from django.views.generic import View
 
+from django.template import loader
+
 # _______________
 # from .models import Question
 
@@ -35,6 +37,13 @@ class MyView(View):
 def main(request):
     # return HttpResponse('<button>Some Button</button>')
     return render(request, 'main.html')
+
+    # test_template = loader.get_template(template_name='templates_example.html')
+    # test_template_list = loader.select_template(template_name_list=['test', 'templates_example.html'])
+    # return HttpResponse(test_template_list.render())
+
+    # test_template_using_string = loader.render_to_string('templates_example.html', context={'str': 'Test string', 'int': 12})  
+    # return HttpResponse(test_template_using_string) 
 
 
 def text(request):

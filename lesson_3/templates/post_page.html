@@ -1,0 +1,23 @@
+{% if latest_question_list %}
+
+<ul>
+    
+    {% for question in latest_question_list|dictsort:'id' %}
+        <li>
+            <a href="/lesson_3/post/{{ question.id }}">
+                {{question.question_text|default:"No question"|title}}
+            </a>
+        </li>
+        {% endfor %}
+        
+        <li>
+            {{  latest_question_list|random }}            
+        </li>
+</ul>
+
+{%else %} 
+
+<p>Empty list</p>
+
+{% endif %}
+
