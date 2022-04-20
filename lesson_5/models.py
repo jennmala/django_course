@@ -13,17 +13,20 @@ class Flower(models.Model):
     name = models.CharField(max_length=64, unique=True)
 
 class Bouquet(models.Model):
+    shop = models.Manager()
     fresh_period = models.DurationField(default=timedelta(days=5), help_text='Use this field when you need to have information about bouquet fresh time')
     photo = models.ImageField(blank=True, null=True)
     price = models.FloatField(default=1.0) 
     flowers = models.ManyToManyField(Flower, verbose_name='This bouquet consists of this flowers')   
 
 class Client(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE )
-    second_email = models.EmailField()
-    name = models.CharField(max_length=64)
-    invoice = models.FileField()
-    user_uuid = models.UUIDField(editable=False)
-    discount_size = models.DecimalField(max_digits=5, decimal_places=5)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True )
+    second_email = models.EmailField(null=True)
+    name = models.CharField(max_length=64, null=True)
+    invoice = models.FileField(null=True, upload_to='uploads/%Y/%m/')
+    user_uuid = models.UUIDField(editable=False, null=True)
+    discount_size = models.DecimalField(max_digits=5, decimal_places=5, null=True)
     client_ip = models.GenericIPAddressField(blank=True, null=True, protocol='IPv4')
 
+    def __str__(self):
+        return self.name
