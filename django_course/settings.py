@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'lesson_1',
     'lesson_2',
     'lesson_3',
+    'lesson_5',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +80,12 @@ WSGI_APPLICATION = 'django_course.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'course',  
+        'USER': 'itvdn',
+        'PASSWORD': 'itvdn',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
