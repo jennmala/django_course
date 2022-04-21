@@ -12,7 +12,7 @@ def create_flower(request):
     rose.count = 5
     rose.description = 'about rose'
     rose.could_use_in_bouquet = True
-    rose.wiki_page = 'https://de.wikipedia.org/wiki/Rose'
+    rose.wiki_page = 'https://www.wikipedia.org/wiki/Rose'
     rose.name = 'Rose'
     rose.save()
     return HttpResponse('Created!')
