@@ -16,15 +16,15 @@
 
     <tr>
         <td scope="col">{{ object.name }}</td>
-        <td scope="col">platform</td>
-        <td scope="col">year</td>
-        <td scope="col">genre</td>
-        <td scope="col">publisher</td>
-        <td scope="col">na_sales</td>
-        <td scope="col">eu_sales</td>
-        <td scope="col">jp_sales</td>
-        <td scope="col">otder_sales</td>
-        <td scope="col">global_sales</td>
+        <td scope="col">{{ object.platform }}</td>
+        <td scope="col">{{ object.year }}</td>
+        <td scope="col">{{ object.genre }}</td>
+        <td scope="col">{{ object.publisher }}</td>
+        <td scope="col">{{ object.na_sales }}</td>
+        <td scope="col">{{ object.eu_sales }}</td>
+        <td scope="col">{{ object.jp_sales }}</td>
+        <td scope="col">{{ object.otder_sales }}</td>
+        <td scope="col">{{ object.global_sales }}</td>
 
     {% empty %} 
     <td>No objects yet.</td>

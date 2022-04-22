@@ -13,3 +13,6 @@ class GameModel(models.Model):
     other_sales = models.FloatField()
     global_sales = models.FloatField()
     
+
+    def __str__(self):
+        return f'{self.pk}_{self.name}'
